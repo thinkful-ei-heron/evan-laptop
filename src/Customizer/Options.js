@@ -3,9 +3,10 @@ import slugify from 'slugify'
 import Input from './Input'
 
 function Options (props) {
-    const options = props.features[props.feature].map(item => {
+    const options = props.features[props.feature].map((item, index) => {
         const itemHash = slugify(JSON.stringify(item));
         return <Input 
+            key={index}
             itemHash={itemHash}
             feature={props.feature}
             item={item}
